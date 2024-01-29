@@ -6,12 +6,14 @@ on:
 
 jobs:
   dotnet-action-test:
-    runs-on: ubuntu-20.04-ppc64le
+    runs-on: ubuntu-22-ppc64le
+    env:
+      DOTNET_INSTALL_DIR: "/opt/runner/_work/_tool/dotnet"
     steps:
       - uses: actions/checkout@v3
-      - uses: dlemstra/setup-dotnet@add-architecture-option
+      - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '7.0.100'
-          architecture: 'ppc64le'
+          cache: true
       - run: |
           dotnet --version
