@@ -8,7 +8,7 @@ jobs:
   dotnet-action-test:
     runs-on: ubuntu-22-ppc64le
     env:
-      DOTNET_INSTALL_DIR: "/opt/runner/_work/_tool/dotnet"
+      DOTNET_INSTALL_DIR: "/opt/hostedtoolcache"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-dotnet@v3
