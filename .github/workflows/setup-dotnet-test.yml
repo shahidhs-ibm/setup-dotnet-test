@@ -6,7 +6,7 @@ on:
 
 jobs:
   dotnet-action-test:
-    runs-on: ubuntu-22-x64
+    runs-on: ubuntu-22-ppc64le
     env:
       DOTNET_INSTALL_DIR: "/opt/hostedtoolcache"
     steps:
