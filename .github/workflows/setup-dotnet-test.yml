@@ -14,8 +14,6 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: ${{ matrix.dotnet }}
-      - env:
-          DOTNET_INSTALL_DIR: "/opt/hostedtoolcache/${{ matrix.dotnet }}"         
+          dotnet-version: ${{ matrix.dotnet }}        
       - run: |
           dotnet --version
