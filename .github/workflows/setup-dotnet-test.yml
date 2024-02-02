@@ -15,5 +15,7 @@ jobs:
       - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet }}
+      - env:
+            DOTNET_INSTALL_DIR: /opt/hostedtoolcache/${{ matrix.dotnet }}         
       - run: |
           dotnet --version
