@@ -6,14 +6,11 @@ on:
 
 jobs:
   dotnet-action-test:
-    runs-on: ubuntu-22-x64
-    strategy:
-      matrix:
-        dotnet: [ '7.0.100', '8.0.100' ]
+    runs-on: ubuntu-latest-ppc64le
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: ${{ matrix.dotnet }}
+          dotnet-version: '7.0.115'
       - run: |
           dotnet --version
