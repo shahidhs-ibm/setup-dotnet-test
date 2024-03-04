@@ -8,7 +8,7 @@ jobs:
   dotnet-action-test:
     runs-on: ubuntu-latest-ppc64le
     env:
-      DOTNET_INSTALL_DIR: "/home/ubuntu/RUNNER/new-test-dotnet/usr/lib64/dotnet"
+      DOTNET_INSTALL_DIR: "/opt/dotnet"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-dotnet@v3
