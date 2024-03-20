@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest-ppc64le
     strategy:
       matrix:
-        dotnet: [ '7.0.115', '8.0.101' ]
+        dotnet: [ '7.0.117', '8.0.103' ]
     env:
       DOTNET_INSTALL_DIR: "/usr/lib64/dotnet"
     steps:
