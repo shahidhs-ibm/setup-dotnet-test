@@ -5,22 +5,16 @@ on:
   push:
 
 jobs:
-  build:
+  dotnet-action-test:
     runs-on: ubuntu-latest-ppc64le
     strategy:
       matrix:
         dotnet: [ '7.0.115', '8.0.101' ]
-    env:
-      DOTNET_INSTALL_DIR: "/usr/lib64/dotnet"
-    name: Dotnet ${{ matrix.dotnet }} sample
     steps:
       - uses: actions/checkout@v3
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v3
-        id: stepid
+      - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet }}
-      - name: Create temporary global.json
-        run: echo '{"sdk":{"version": "${{ steps.stepid.outputs.dotnet-version }}"}}' > ./global.json
-      - name: Execute dotnet
-        run: dotnet --version
+      - run: |
+          echo '{"sdk":{"version": "${{ matrix.dotnet }}"}}' > ./global.json
+          dotnet --version
